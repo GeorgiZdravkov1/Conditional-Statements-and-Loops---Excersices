@@ -1,0 +1,94 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hotel
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string month = Console.ReadLine();
+            int nights = int.Parse(Console.ReadLine());
+            double studioPrice = 0;
+            double doublePrice = 0;
+            double suitePrice = 0;
+            double discount = 0;
+
+            if (month == "May" || month == "October")
+            {
+                
+                
+                studioPrice = 50;
+                doublePrice = 65;
+                suitePrice = 75;
+                var studioTotalPrice = studioPrice * nights;
+                var doubleTotalPrice = doublePrice * nights;
+                var suitTotalPrice = suitePrice * nights;
+                
+
+              if (nights > 7 && month == "Octomber")
+                {
+                    studioTotalPrice = suitePrice * (nights - 1);
+                    
+                    studioTotalPrice = studioTotalPrice - (studioTotalPrice * 0.05);
+                }
+
+                
+              
+
+                Console.WriteLine($"Studio: {studioTotalPrice:F2} lv.");
+                Console.WriteLine($"Double: {doubleTotalPrice:F2} lv.");
+                Console.WriteLine($"Suite: {suitTotalPrice:F2} lv.");
+            }
+           else if (month == "June" || month == "September")
+            {
+
+
+                studioPrice = 60;
+                doublePrice = 72;
+                suitePrice = 82;
+                var studioTotalPrice = studioPrice * nights;
+                var doubleTotalPrice = doublePrice * nights;
+                var suitTotalPrice = suitePrice * nights;
+
+
+                if (nights > 14)
+                {
+                    doubleTotalPrice = doubleTotalPrice - (doubleTotalPrice * 0.1);
+                }
+                if (nights > 7 && month == "September")
+                {
+                    suitePrice = suitePrice * (nights - 1);
+                }
+
+                Console.WriteLine($"Studio: {studioTotalPrice:F2} lv.");
+                Console.WriteLine($"Double: {doubleTotalPrice:F2} lv.");
+                Console.WriteLine($"Suite: {suitTotalPrice:F2} lv.");
+            }
+            else if (month == "July" || month == "August" || month == "December")
+            {
+
+
+                studioPrice = 68;
+                doublePrice = 77;
+                suitePrice = 89;
+                var studioTotalPrice = studioPrice * nights;
+                var doubleTotalPrice = doublePrice * nights;
+                var suitTotalPrice = suitePrice * nights;
+
+
+                if (nights > 14)
+                {
+                    suitTotalPrice = suitTotalPrice - (suitTotalPrice * 0.15);
+                }
+
+                Console.WriteLine($"Studio: {studioTotalPrice:F2} lv.");
+                Console.WriteLine($"Double: {doubleTotalPrice:F2} lv.");
+                Console.WriteLine($"Suite: {suitTotalPrice:F2} lv.");
+            }
+        }
+    }
+}
