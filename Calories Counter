@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Calories_Counter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int counter = int.Parse(Console.ReadLine());
+            double sumOfCalories = 0;
+            var calories = 0;
+
+            for (int i = 1; i <= counter; i++)
+            {
+                var product = Console.ReadLine().ToLower();
+
+                if (product == "cheese") calories = 500;
+                else if (product == "tomato sauce") calories = 150;
+                else if (product == "salami") calories = 600;
+                else if (product == "pepper") calories = 50;
+                else calories = 0;
+
+                sumOfCalories = sumOfCalories + calories;
+
+            }
+                Console.WriteLine($"Total calories: {sumOfCalories}");
+        }
+    }
+}
